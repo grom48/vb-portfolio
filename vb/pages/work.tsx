@@ -1,23 +1,24 @@
-import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
-
-// See if person scrolls down
-// https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs
-interface Args extends IntersectionObserverInit {
-  freezeOnceVisible?: boolean;
-}
+import { useRouter } from "next/router";
 
 const Work = () => {
-  // Create function that change route to about
-  const handleScrollDown = () => {
-    // Change route to about
-    // https://stackoverflow.com/questions/42701129/how-to-programmatically-navigate-using-next-js
-    console.log("Scroll down");
+  const router = useRouter();
+
+  const handleScroll = () => {
+    console.log("Hello World");
+    // Change the route here
+    router.push("/about");
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <div onMouseDown={handleScrollDown}>Work</div>
+      <div style={{ height: "101vh", overflow: "scroll" }}>
+        <h1>Work</h1>
+      </div>
     </>
   );
 };
