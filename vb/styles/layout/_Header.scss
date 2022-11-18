@@ -1,0 +1,40 @@
+nav {
+  h1 {
+    font-family: "Poppins-Bold";
+    color: $blue;
+  }
+  /* ul a {
+    color: $black;
+  } */
+  .active {
+    color: $blue !important;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 50%;
+      height: 2px;
+      background-color: $blue;
+      border-radius: 2px;
+    }
+  }
+}
+
+.hire {
+  background-color: $blue;
+  color: $white;
+  border-radius: 30px;
+  padding: 12px 25px;
+  transition: 0.5s all ease;
+  border: 1px solid $blue;
+
+  &:hover {
+    background-color: transparent;
+    color: $blue;
+    border: 1px solid $blue;
+    transition: 0.5s all ease;
+  }
+}

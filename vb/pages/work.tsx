@@ -1,24 +1,33 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/router";
+import { motion as m, useMotionValue } from "framer-motion";
+import Image from "next/image";
+import ProjectSlider from "../components/Slider";
 
 const Work = () => {
-  const router = useRouter();
-
-  const handleScroll = () => {
-    console.log("Hello World");
-    // Change the route here
-    router.push("/about");
+  const variants = {
+    hidden: { opacity: 0, x: -200, y: 0 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: 0, y: -100 },
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <>
-      <div style={{ height: "101vh", overflow: "scroll" }}>
-        <h1>Work</h1>
-      </div>
+      <m.div
+        variants={variants} // Pass the variant object into Framer Motion
+        initial="hidden" // Set the initial state to variants.hidden
+        animate="enter" // Animated state to variants.enter
+        exit="exit" // Exit state (used later) to variants.exit
+        transition={{ type: "linear" }} // Set the transition to linear
+        className=""
+      >
+        <h1 className="text-9xl py-5">
+          <span className="personal-name">Work</span>
+        </h1>
+        <div className="wrapper py-1 flex items-center">
+          <div className="left-wrapper">
+            <ProjectSlider />
+          </div>
+        </div>
+      </m.div>
     </>
   );
 };
