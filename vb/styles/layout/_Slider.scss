@@ -1,50 +1,17 @@
-.slider {
-  display: flex !important;
-}
-
-.slider-container {
-  position: relative;
-  width: 600px;
-  height: 600px;
-}
-
-.slide {
-  border-radius: 5px;
-  background: $black;
-  position: absolute;
-  color: $white;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-/* position of indicator container */
-.Indicators {
+.slider-wrapper {
   display: flex;
-  justify-content: center;
-  margin-top: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
 }
 
-.Indicator-container {
-  padding: 20px;
-  cursor: pointer;
+.slika {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.Indicator {
-  width: 10px;
-  height: 10px;
-  background: $blue;
-  border-radius: 50%;
-  position: relative;
-}
-
-.Indicator-highlight {
-  top: -2px;
-  left: -2px;
-  background: #09f;
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  position: absolute;
+.wrappers {
+  padding: 0;
 }

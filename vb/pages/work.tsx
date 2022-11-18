@@ -1,6 +1,7 @@
 import { motion as m, useMotionValue } from "framer-motion";
 import Image from "next/image";
-import ProjectSlider from "../components/Slider";
+//import ProjectSlider from "../components/Slider";
+import Slider from "../components/Slider";
 
 const Work = () => {
   const variants = {
@@ -19,12 +20,12 @@ const Work = () => {
         transition={{ type: "linear" }} // Set the transition to linear
         className=""
       >
-        <h1 className="text-9xl py-5">
+        <h1 className="text-9xl py-3">
           <span className="personal-name">Work</span>
         </h1>
-        <div className="wrapper py-1 flex items-center">
+        <div className="wrappers flex items-center">
           <div className="left-wrapper">
-            <ProjectSlider />
+            <Slider />
           </div>
         </div>
       </m.div>
